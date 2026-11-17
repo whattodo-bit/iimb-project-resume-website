@@ -1,0 +1,481 @@
+/* =============================================
+   Avneesh Chahal - Resume website
+   Colour palette (ledger green theme):
+     Green      #1e4d3b  (main colour)
+     Dark green #143528  (footer)
+     Light green#e8f0eb  (section backgrounds)
+     Mustard    #e3a72f  (accent / highlights)
+     Text       #1f1f1f
+     Grey text  #5f6b65
+   Font: Archivo (Google Fonts)
+   ============================================= */
+
+
+/* ---------- 1. Element selectors ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  margin: 0;
+  font-family: "Archivo", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1f1f1f;
+  background-color: #ffffff;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1e4d3b;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 8px;
+}
+
+a {
+  color: #1e4d3b;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ---------- 2. Common classes ---------- */
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 60px 0 20px;
+}
+
+
+
+/* ---------- 3. Navigation bar (ID + flexbox + sticky) ---------- */
+
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background-color: #1e4d3b;
+}
+
+.logo {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.menu {
+  list-style: none;
+}
+
+/* list items are block by default, changed to inline-block */
+.menu li {
+  display: inline-block;
+  margin-left: 24px;
+}
+
+.menu a {
+  color: #dce8e1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover {
+  color: #ffffff;
+  border-bottom-color: #e3a72f;
+}
+
+
+/* ---------- 4. Intro section ---------- */
+
+#home {
+  background-color: #e8f0eb;
+  padding: 80px 0 70px;
+}
+
+/* relative parent for the absolutely placed location tag */
+.home-inner {
+  position: relative;
+}
+
+.location {
+  position: absolute;
+  top: -50px;
+  right: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #5f6b65;
+}
+
+#home h1 {
+  font-size: 56px;
+  font-weight: 800;
+  color: #1e4d3b;
+  margin-bottom: 18px;
+}
+
+.intro-text {
+  font-size: 20px;
+  max-width: 620px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 11px 26px;
+  margin-right: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid #1e4d3b;
+  border-radius: 4px;
+}
+
+.btn-main {
+  background-color: #1e4d3b;
+  color: #ffffff;
+}
+
+.btn-main:hover {
+  background-color: #143528;
+}
+
+.btn-line {
+  background-color: transparent;
+  color: #1e4d3b;
+}
+
+.btn-line:hover {
+  background-color: #1e4d3b;
+  color: #ffffff;
+}
+
+
+/* ---------- 5. Numbers strip (feature section) ---------- */
+
+#numbers {
+  background-color: #1e4d3b;
+  color: #ffffff;
+  padding: 30px 0;
+}
+
+#numbers .wrap {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.stat {
+  flex: 1;
+  border-right: 1px solid #3d6b58;
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat-num {
+  font-size: 34px;
+  font-weight: 800;
+  color: #e3a72f;
+  margin: 0;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #dce8e1;
+  margin: 0;
+}
+
+
+/* ---------- 6. About ---------- */
+
+.about-grid {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.about-grid > p {
+  flex: 3;
+  font-size: 17px;
+}
+
+.now-box {
+  flex: 2;
+  background-color: #e8f0eb;
+  border-left: 5px solid #e3a72f;
+  padding: 20px 24px;
+}
+
+.now-box h3 {
+  color: #1e4d3b;
+  margin-bottom: 8px;
+}
+
+.now-box ul {
+  padding-left: 18px;
+}
+
+.now-box li {
+  margin-bottom: 4px;
+}
+
+
+/* ---------- 7. Education timeline ---------- */
+
+.timeline {
+  border-left: 3px solid #1e4d3b;
+  padding-left: 28px;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  padding-bottom: 28px;
+}
+
+/* dot on the timeline line */
+.item::before {
+  content: "";
+  position: absolute;
+  left: -37px;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #e3a72f;
+  border: 2px solid #1e4d3b;
+}
+
+.year {
+  flex: 0 0 130px;
+  font-weight: 700;
+  color: #1e4d3b;
+}
+
+.org {
+  color: #5f6b65;
+  font-style: italic;
+}
+
+
+/* ---------- 8. Experience cards ---------- */
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #c9d8cf;
+  border-top: 5px solid #1e4d3b;
+  border-radius: 4px;
+  padding: 22px;
+}
+
+.card:hover {
+  border-top-color: #e3a72f;
+}
+
+.card-type {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1e4d3b;
+  background-color: #e8f0eb;
+  padding: 2px 8px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin-bottom: 4px;
+}
+
+.card-date {
+  font-size: 14px;
+  color: #5f6b65;
+}
+
+
+/* ---------- 9. Skills ---------- */
+
+.skill-group {
+  margin-bottom: 20px;
+}
+
+.skill-group h3 {
+  font-size: 16px;
+  color: #5f6b65;
+  margin-bottom: 8px;
+}
+
+.tags {
+  list-style: none;
+}
+
+/* block list items shown side by side */
+.tags li {
+  display: inline-block;
+  padding: 6px 14px;
+  margin: 0 8px 8px 0;
+  border: 2px solid #1e4d3b;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+
+/* ---------- 10. Contact ---------- */
+
+#contact {
+  margin-top: 50px;
+  background-color: #e8f0eb;
+  padding: 60px 0;
+  text-align: center;
+}
+
+#contact p {
+  font-size: 18px;
+}
+
+.contact-links a {
+  display: inline-block;
+  margin: 10px 14px 0;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+
+/* ---------- 11. Footer ---------- */
+
+#footer {
+  background-color: #143528;
+  color: #dce8e1;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+#footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer p {
+  margin: 0;
+}
+
+#footer a {
+  color: #e3a72f;
+}
+
+
+/* ---------- 12. Mobile screens ---------- */
+
+@media (max-width: 700px) {
+
+  #navbar {
+    flex-direction: column;
+    padding: 12px 16px;
+  }
+
+  .menu {
+    margin-top: 6px;
+    text-align: center;
+  }
+
+  .menu li {
+    margin: 0 8px;
+  }
+
+  #home {
+    padding: 70px 0 50px;
+  }
+
+  .location {
+    top: -46px;
+    left: 24px;
+    right: auto;
+  }
+
+  #home h1 {
+    font-size: 40px;
+  }
+
+  .intro-text {
+    font-size: 18px;
+  }
+
+  #numbers .wrap {
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    flex: 0 0 50%;
+    border-right: none;
+    padding: 10px 0;
+  }
+
+  .about-grid,
+  .cards,
+  .item {
+    flex-direction: column;
+  }
+
+  .about-grid {
+    gap: 20px;
+  }
+
+  .item {
+    gap: 2px;
+  }
+
+  .year {
+    flex: none;
+  }
+
+  #footer .wrap {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+}
